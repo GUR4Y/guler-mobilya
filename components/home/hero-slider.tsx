@@ -39,7 +39,6 @@ const SLIDES = [
 
 export function HeroSlider() {
   const [current, setCurrent] = useState(0)
-  const [sliderHeight, setSliderHeight] = useState("calc(100vh - 114px)")
 
   // Otomatik geçiş (6 saniyede bir)
   useEffect(() => {
@@ -49,30 +48,12 @@ export function HeroSlider() {
     return () => clearInterval(timer)
   }, [])
 
-  // Header ve UtilityBar yüksekliğini dinamik ölçerek ilk ekranda tam viewport oturmasını sağla
-  useEffect(() => {
-    const updateHeight = () => {
-      const uBar = document.getElementById("utility-bar")
-      const mHeader = document.getElementById("main-header")
-      const uHeight = uBar ? uBar.offsetHeight : 33
-      const mHeight = mHeader ? mHeader.offsetHeight : 81
-      const totalHeaderH = uHeight + mHeight
-      const exactH = Math.max(window.innerHeight - totalHeaderH, 480)
-      setSliderHeight(`${exactH}px`)
-    }
-
-    updateHeight()
-    window.addEventListener("resize", updateHeight)
-    return () => window.removeEventListener("resize", updateHeight)
-  }, [])
-
   const prevSlide = () => setCurrent((prev) => (prev - 1 + SLIDES.length) % SLIDES.length)
   const nextSlide = () => setCurrent((prev) => (prev + 1) % SLIDES.length)
 
   return (
     <section
-      style={{ height: sliderHeight, minHeight: sliderHeight }}
-      className="relative w-full overflow-hidden bg-neutral-900"
+      className="relative w-full overflow-hidden bg-neutral-900 h-[540px] sm:h-[620px] lg:h-[calc(100svh-114px)] min-h-[500px]"
     >
       {/* Arka Plan Slider Görselleri */}
       <AnimatePresence mode="wait">

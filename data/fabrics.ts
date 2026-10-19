@@ -1,0 +1,68 @@
+import { Fabric } from "@/types/fabric"
+
+export const INITIAL_FABRICS: Fabric[] = [
+  {
+    id: "fabric-001",
+    name: "Luna",
+    code: "1245",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85",
+    collection: "Bouclé Nordic",
+    active: true,
+  },
+  {
+    id: "fabric-002",
+    name: "Onyx",
+    code: "1280",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+    collection: "Bouclé Nordic",
+    active: true,
+  },
+  {
+    id: "fabric-003",
+    name: "Emerald",
+    code: "4410",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85",
+    collection: "Royal Velvet",
+    active: true,
+  },
+  {
+    id: "fabric-004",
+    name: "Sapphire",
+    code: "4488",
+    image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=85",
+    collection: "Royal Velvet",
+    active: true,
+  },
+  {
+    id: "fabric-005",
+    name: "Dune",
+    code: "0812",
+    image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1200&q=85",
+    collection: "Pure Belgian Linen",
+    active: true,
+  },
+  {
+    id: "fabric-006",
+    name: "Sage",
+    code: "0899",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85",
+    collection: "Pure Belgian Linen",
+    active: true,
+  },
+  {
+    id: "fabric-007",
+    name: "Cognac",
+    code: "9010",
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85",
+    collection: "Heritage Leather",
+    active: true,
+  },
+  {
+    id: "fabric-008",
+    name: "Terracotta",
+    code: "3100",
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=85",
+    collection: "Contemporary Chenille",
+    active: true,
+  },
+]

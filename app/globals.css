@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F5F1;
+  --foreground: #1E1E1C;
+  --card: #FFFFFF;
+  --card-foreground: #1E1E1C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E1E1C;
+  --primary: #1E1E1C;
+  --primary-foreground: #F7F5F1;
+  --secondary: #EFECE6;
+  --secondary-foreground: #1E1E1C;
+  --muted: #EFECE6;
+  --muted-foreground: #6E6A64;
+  --accent: #D9822B;
+  --accent-foreground: #FFFFFF;
+  --border: #E7E2DA;
+  --input: #E7E2DA;
+  --ring: #1E1E1C;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-guler-bg: #F7F5F1;
+  --color-guler-text: #1E1E1C;
+  --color-guler-muted: #6E6A64;
+  --color-guler-surface: #FFFFFF;
+  --color-guler-border: #E7E2DA;
+  --color-guler-accent: #9A6836;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container-custom {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Next.js Development Indicator (N tuşu) gizleme */
+nextjs-portal,
+[data-nextjs-dev-tools-button],
+[data-nextjs-toast],
+[data-nextjs-indicator] {
+  display: none !important;
+}

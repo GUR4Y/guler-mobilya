@@ -8,7 +8,7 @@ import { ContactCta } from "@/components/home/contact-cta"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFFFF]">
+    <div className="min-h-screen flex flex-col bg-[#FFFFFF] overflow-x-clip">
       <Header />
       <main className="flex-1">
         {/* 1. Tam Ekran Büyük Arka Plan Slider Hero */}

@@ -34,7 +34,7 @@ export function Header() {
       <UtilityBar />
       <header
         id="main-header"
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-colors duration-200 ${
           isScrolled
             ? "bg-[#F7F5F1]/95 backdrop-blur-md shadow-sm border-b border-[#E7E2DA]"
             : "bg-[#F7F5F1] border-b border-[#E7E2DA]/60"

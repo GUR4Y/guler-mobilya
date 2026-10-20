@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, BookOpen, ChevronLeft, ChevronRight } from "lucide-react"
 
 // Tam ekran slider slaytları
@@ -52,43 +51,33 @@ export function HeroSlider() {
   const nextSlide = () => setCurrent((prev) => (prev + 1) % SLIDES.length)
 
   return (
-    <section
-      className="relative w-full overflow-hidden bg-neutral-900 h-[540px] sm:h-[620px] lg:h-[calc(100svh-114px)] min-h-[500px]"
-    >
-      {/* Arka Plan Slider Görselleri */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
+    <section className="relative w-full overflow-hidden bg-neutral-900 h-[520px] sm:h-[600px] lg:h-[calc(100vh-114px)] min-h-[480px]">
+      {/* Arka Plan Slider Görselleri (Saf CSS Opaklık Geçişi - Sıfır Titreme) */}
+      {SLIDES.map((slide, idx) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+            idx === current ? "opacity-100 z-0" : "opacity-0 -z-10 pointer-events-none"
+          }`}
         >
           <Image
-            src={SLIDES[current].image}
-            alt={SLIDES[current].title}
+            src={slide.image}
+            alt={slide.title}
             fill
-            priority
+            priority={idx === 0}
             sizes="100vw"
             className="object-cover object-center"
           />
           {/* Fresh ve okunaklı lüks koyuluk efekti */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/30" />
-        </motion.div>
-      </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
+        </div>
+      ))}
 
       {/* Ön Plan Metin & CTA Alanı */}
       <div className="relative z-10 h-full container-custom flex items-center">
         <div className="max-w-2xl text-white space-y-6">
-          <motion.div
-            key={`text-${current}`}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-widest uppercase bg-white/10 backdrop-blur-md rounded-full text-amber-300 border border-white/15">
+          <div className="space-y-4">
+            <span className="inline-block px-3.5 py-1 text-xs font-semibold tracking-widest uppercase bg-black/40 rounded-full text-amber-300 border border-white/20">
               {SLIDES[current].tagline}
             </span>
 
@@ -99,17 +88,12 @@ export function HeroSlider() {
             <p className="text-base sm:text-lg text-white/85 font-normal leading-relaxed max-w-xl">
               {SLIDES[current].description}
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
-          >
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <Link
               href={SLIDES[current].primaryBtn.href}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-neutral-900 text-sm font-semibold tracking-wide hover:bg-neutral-100 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-neutral-900 text-sm font-semibold tracking-wide hover:bg-neutral-100 transition-colors shadow-lg"
             >
               <span>{SLIDES[current].primaryBtn.text}</span>
               <ArrowRight size={16} />
@@ -117,12 +101,12 @@ export function HeroSlider() {
 
             <Link
               href={SLIDES[current].secondaryBtn.href}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/25 text-sm font-medium tracking-wide transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 text-sm font-medium tracking-wide transition-colors"
             >
               <BookOpen size={16} />
               <span>{SLIDES[current].secondaryBtn.text}</span>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -131,7 +115,7 @@ export function HeroSlider() {
         <button
           type="button"
           onClick={prevSlide}
-          className="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 backdrop-blur-md text-white border border-white/15 flex items-center justify-center transition-all"
+          className="w-11 h-11 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors"
           aria-label="Önceki Slayt"
         >
           <ChevronLeft size={20} />
@@ -139,7 +123,7 @@ export function HeroSlider() {
         <button
           type="button"
           onClick={nextSlide}
-          className="w-11 h-11 rounded-full bg-black/40 hover:bg-black/70 backdrop-blur-md text-white border border-white/15 flex items-center justify-center transition-all"
+          className="w-11 h-11 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors"
           aria-label="Sonraki Slayt"
         >
           <ChevronRight size={20} />

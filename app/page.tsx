@@ -11,11 +11,6 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-[#FFFFFF]">
       <Header />
       <main className="flex-1">
-        {/* Canlı Test Doğrulama Şeridi */}
-        <div className="bg-red-600 text-white text-center py-3 text-sm font-bold tracking-widest uppercase shadow-md">
-          🔴 GÜNCEL TEST SÜRÜMÜ (CANLIYA GEÇTİ) 🔴
-        </div>
-
         {/* 1. Tam Ekran Büyük Arka Plan Slider Hero */}
         <HeroSlider />
 

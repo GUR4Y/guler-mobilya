@@ -11,7 +11,7 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-[#FFFFFF]">
       <Header />
       <main className="flex-1">
-        {/* 1. Tam Ekran Büyük Arka Plan Slider Hero */}
+        {/* Güler Mobilya 2026 Resmi Canlı Sürüm */}
         <HeroSlider />
 
         {/* 2. Sadeleştirilmiş Mobilya Modelleri (6 Kategori Vitrini) */}

@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/data/site-config"
 
 export function UtilityBar() {
   return (
-    <div id="utility-bar" className="hidden md:block bg-[#1E1E1C] text-[#E7E2DA] text-xs py-2 border-b border-white/5">
+    <div id="utility-bar" className="bg-[#1E1E1C] text-[#E7E2DA] text-[11px] sm:text-xs py-1.5 sm:py-2 border-b border-white/5">
       <div className="container-custom flex items-center justify-between">
         {/* Tıklanabilir Telefon */}
         <a

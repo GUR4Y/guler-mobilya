@@ -10,18 +10,9 @@ import { SITE_CONFIG } from "@/data/site-config"
 
 export function Header() {
   const pathname = usePathname()
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   // Sayfa değiştiğinde mobil menüyü kapat
   useEffect(() => {
@@ -34,11 +25,7 @@ export function Header() {
       <UtilityBar />
       <header
         id="main-header"
-        className={`sticky top-0 z-50 transition-colors duration-200 ${
-          isScrolled
-            ? "bg-[#F7F5F1]/95 backdrop-blur-md shadow-sm border-b border-[#E7E2DA]"
-            : "bg-[#F7F5F1] border-b border-[#E7E2DA]/60"
-        }`}
+        className="sticky top-0 z-50 bg-[#F7F5F1] border-b border-[#E7E2DA] shadow-xs"
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-20">

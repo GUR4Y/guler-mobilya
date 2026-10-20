@@ -41,7 +41,7 @@ export function CategoryShowcase() {
                     alt={cat.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                    className="object-cover md:group-hover:scale-103 transition-transform duration-500 ease-out"
                   />
                 </div>
 

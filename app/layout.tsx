@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { ScrollToTopOnRefresh } from "@/components/layout/scroll-to-top-on-refresh"
+import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp"
 import "./globals.css"
 
 const inter = Inter({
@@ -52,6 +53,7 @@ export default function RootLayout({
     <html lang="tr" className={`${inter.variable} antialiased`}>
       <body className="font-sans bg-[#F7F5F1] text-[#1E1E1C] selection:bg-[#E7E2DA] selection:text-[#1E1E1C]">
         <ScrollToTopOnRefresh />
+        <FloatingWhatsApp />
         {children}
       </body>
     </html>

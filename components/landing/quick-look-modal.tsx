@@ -120,11 +120,6 @@ export function QuickLookModal({ product, isOpen, onClose }: QuickLookModalProps
                     {/* Price */}
                     <div className="text-2xl font-bold text-neutral-900">{product.price}</div>
 
-                    {/* Dimensions */}
-                    <div>
-                      <h4 className="text-sm font-medium text-neutral-900 mb-2">DIMENSIONS</h4>
-                      <p className="text-neutral-600">{product.dimensions}</p>
-                    </div>
 
                     {/* Material Swatches */}
                     <div>

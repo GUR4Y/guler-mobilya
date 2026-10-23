@@ -48,7 +48,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Fatma Y.",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "Eski çiçekli yastıklı halinden eser kalmadı, salonumuza modern ve çok ferah bir hava kattı. Oturumu ilk günkü gibi!",
       rating: 5,
     },
@@ -70,7 +70,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Serkan B.",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "Klasik eski modeli yarmalı modern modele çevirdiler. Yeni koltuk alsak bu kadar kaliteli olamazdı.",
       rating: 5,
     },
@@ -92,7 +92,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Mehmet A.",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "Kumaşında yanık ve yırtıklar vardı, çöpe atacaktık. Atölye öyle bir yeniledi ki mağazadan yeni almış gibiyiz.",
       rating: 5,
     },
@@ -114,7 +114,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Bahar T.",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "İskeleti hurdaya çıkmış gibiydi, teslim edildiğinde gözlerime inanamadım. Gerçekten harika bir zanaat.",
       rating: 5,
     },
@@ -136,7 +136,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Salon Sahibi",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "Sıfır saç yıkama ünitesi almaya kalksak servet ödeyecektik. Hem konforu arttı hem de derisi taş gibi sağlam oldu.",
       rating: 5,
     },
@@ -158,7 +158,7 @@ export const UPHOLSTERY_PROJECTS: UpholsteryProject[] = [
     },
     testimonial: {
       customer: "Caner D.",
-      location: "Bursa",
+      location: "İstanbul",
       comment: "Derisi döküldüğü için kullanamıyorduk. Hem mekanizma bakımı yapıldı hem de derisi sıfır oldu.",
       rating: 5,
     },

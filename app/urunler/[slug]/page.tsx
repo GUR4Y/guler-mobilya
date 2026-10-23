@@ -8,7 +8,7 @@ import { CatalogCalloutBanner } from "@/components/product/catalog-callout-banne
 import { PRODUCTS, Product } from "@/data/products"
 import { PRODUCT_CATEGORIES, ProductCategory } from "@/data/categories"
 import { SITE_CONFIG } from "@/data/site-config"
-import { ChevronRight, Home, Phone, Ruler, ShieldCheck, Tag } from "lucide-react"
+import { ChevronRight, Home, Phone, ShieldCheck, Tag } from "lucide-react"
 import type { Metadata } from "next"
 
 interface DynamicSlugPageProps {
@@ -247,15 +247,6 @@ export default async function DynamicSlugPage({ params }: DynamicSlugPageProps) 
                     </p>
                   )}
 
-                  {product.dimensions && (
-                    <div className="p-4 bg-[#FFFFFF] rounded-lg border border-[#E7E2DA] flex items-center gap-3">
-                      <Ruler size={18} className="text-[#9A6836] shrink-0" />
-                      <div className="text-xs sm:text-sm">
-                        <span className="text-[#6E6A64] block font-light">Ölçüler</span>
-                        <span className="font-medium text-[#1E1E1C]">{product.dimensions}</span>
-                      </div>
-                    </div>
-                  )}
 
                   {product.features && product.features.length > 0 && (
                     <div className="space-y-2 pt-2 border-t border-[#E7E2DA]">

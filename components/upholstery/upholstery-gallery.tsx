@@ -1,12 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { CheckCircle2, MessageSquare, Layers, Sparkles, Star } from "lucide-react"
+import { CheckCircle2, MessageSquare, Layers, Sparkles, Star, X, Quote } from "lucide-react"
 import { UPHOLSTERY_PROJECTS, UpholsteryProject } from "@/data/upholstery"
 import { SITE_CONFIG } from "@/data/site-config"
 
-function ProjectCard({ project }: { project: UpholsteryProject }) {
+interface ProjectCardProps {
+  project: UpholsteryProject
+  onOpenReview: (project: UpholsteryProject) => void
+}
+
+function ProjectCard({ project, onOpenReview }: ProjectCardProps) {
   const [showAfter, setShowAfter] = useState(false)
 
   return (
@@ -84,7 +89,6 @@ function ProjectCard({ project }: { project: UpholsteryProject }) {
             <span className="text-xs uppercase tracking-wider text-[#9A6836] font-semibold">
               {project.category}
             </span>
-            <span className="text-[11px] text-[#8E8A84] font-medium">No: {project.id}</span>
           </div>
 
           <h3 className="text-lg font-semibold text-[#1E1E1C] leading-snug">
@@ -120,9 +124,14 @@ function ProjectCard({ project }: { project: UpholsteryProject }) {
           )}
         </div>
 
-        {/* Müşteri Yorumu (Varsa) */}
+        {/* Müşteri Yorumu (Tıklanınca büyük kartta detaylı açılır) */}
         {project.testimonial && (
-          <div className="bg-[#F7F5F1] p-3 rounded-xl border border-[#E7E2DA]/80 space-y-1">
+          <button
+            type="button"
+            onClick={() => onOpenReview(project)}
+            title="Yorumun tamamını büyük kartta görmek için tıklayın"
+            className="w-full text-left bg-[#F7F5F1] hover:bg-[#EFECE6] p-3.5 rounded-xl border border-[#E7E2DA]/80 hover:border-[#9A6836]/40 space-y-1.5 transition-all duration-200 group/review cursor-pointer"
+          >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1 text-amber-500">
                 {[...Array(project.testimonial.rating)].map((_, i) => (
@@ -133,10 +142,14 @@ function ProjectCard({ project }: { project: UpholsteryProject }) {
                 {project.testimonial.customer} ({project.testimonial.location})
               </span>
             </div>
-            <p className="text-xs italic text-[#4A4742] line-clamp-2">
+            <p className="text-xs italic text-[#4A4742] line-clamp-2 leading-relaxed">
               "{project.testimonial.comment}"
             </p>
-          </div>
+            <div className="pt-0.5 flex items-center justify-between text-[11px] text-[#9A6836] font-medium group-hover/review:text-[#7A4F23]">
+              <span>Yorumun tamamını gör</span>
+              <span className="text-xs font-bold transition-transform group-hover/review:translate-x-0.5">↗</span>
+            </div>
+          </button>
         )}
 
         {/* WhatsApp Hızlı Fiyat Butonu */}
@@ -159,6 +172,27 @@ function ProjectCard({ project }: { project: UpholsteryProject }) {
 }
 
 export function UpholsteryGallery() {
+  const [selectedReviewProject, setSelectedReviewProject] = useState<UpholsteryProject | null>(null)
+
+  // ESC tuşuna basınca modalı kapat
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedReviewProject(null)
+      }
+    }
+    if (selectedReviewProject) {
+      document.body.style.overflow = "hidden"
+      window.addEventListener("keydown", handleKeyDown)
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [selectedReviewProject])
+
   return (
     <section id="projeler" className="py-16 sm:py-20 lg:py-24 bg-[#F7F5F1] border-b border-[#E7E2DA]">
       <div className="container-custom">
@@ -177,13 +211,116 @@ export function UpholsteryGallery() {
           </p>
         </div>
 
-        {/* Proje Kartları Izgarası (Tek Celsede Tümü Birlikte) */}
+        {/* Proje Kartları Izgarası */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {UPHOLSTERY_PROJECTS.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onOpenReview={(p) => setSelectedReviewProject(p)}
+            />
           ))}
         </div>
       </div>
+
+      {/* Büyük Yorum Kartı Modalı */}
+      {selectedReviewProject && selectedReviewProject.testimonial && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/65 backdrop-blur-sm animate-in fade-in duration-200"
+          onClick={() => setSelectedReviewProject(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-[#E7E2DA] p-6 sm:p-8 overflow-hidden animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Kapat Butonu */}
+            <button
+              type="button"
+              onClick={() => setSelectedReviewProject(null)}
+              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#F7F5F1] hover:bg-[#EFECE6] text-[#6E6A64] hover:text-[#1E1E1C] flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Kapat"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Rozet & Puan */}
+            <div className="flex flex-wrap items-center gap-2 mb-5">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200/80">
+                <CheckCircle2 size={13} className="text-emerald-700" />
+                <span>Doğrulanmış Müşteri Deneyimi</span>
+              </span>
+              <div className="flex items-center gap-1 text-amber-500 ml-auto mr-10 sm:mr-0">
+                {[...Array(selectedReviewProject.testimonial.rating)].map((_, i) => (
+                  <Star key={i} size={15} fill="currentColor" />
+                ))}
+              </div>
+            </div>
+
+            {/* İlgili Proje Önizlemesi */}
+            <div className="flex items-center gap-3.5 p-3.5 bg-[#F7F5F1] rounded-2xl border border-[#E7E2DA] mb-6">
+              <div className="relative w-16 h-12 rounded-xl overflow-hidden shrink-0 bg-neutral-900 border border-[#E7E2DA]">
+                <Image
+                  src={selectedReviewProject.afterImage}
+                  alt={selectedReviewProject.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#9A6836] block">
+                  {selectedReviewProject.category}
+                </span>
+                <h4 className="text-xs sm:text-sm font-medium text-[#1E1E1C] truncate">
+                  {selectedReviewProject.title}
+                </h4>
+              </div>
+            </div>
+
+            {/* Yorumun Tamamı (Büyük Tipografi ve Alıntı Vurgusu) */}
+            <div className="relative mb-6 bg-[#FCFBF9] p-5 rounded-2xl border border-[#E7E2DA]/60">
+              <Quote className="w-8 h-8 text-[#9A6836]/25 mb-2" />
+              <p className="text-base sm:text-lg text-[#1E1E1C] font-normal leading-relaxed italic">
+                "{selectedReviewProject.testimonial.comment}"
+              </p>
+            </div>
+
+            {/* Müşteri & Konum Bilgisi */}
+            <div className="pt-4 border-t border-[#E7E2DA] flex items-center justify-between">
+              <div>
+                <span className="block text-sm font-semibold text-[#1E1E1C]">
+                  {selectedReviewProject.testimonial.customer}
+                </span>
+                <span className="text-xs text-[#6E6A64]">
+                  {selectedReviewProject.testimonial.location}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href={`${SITE_CONFIG.whatsappUrl}?text=${encodeURIComponent(
+                    `Merhaba Güler Mobilya, döşeme sayfanızdaki "${selectedReviewProject.title}" projesini ve müşteri yorumunu gördüm. Ben de mobilyam için fiyat almak istiyorum.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 rounded-full bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs font-semibold transition-colors inline-flex items-center gap-1.5"
+                >
+                  <MessageSquare size={13} />
+                  <span>Fiyat Sor</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSelectedReviewProject(null)}
+                  className="px-4 py-2 rounded-full bg-[#F7F5F1] hover:bg-[#EFECE6] text-[#1E1E1C] text-xs font-semibold transition-colors cursor-pointer border border-[#E7E2DA]"
+                >
+                  Kapat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

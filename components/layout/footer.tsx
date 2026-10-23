@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone } from "lucide-react"
+import { Phone, MapPin } from "lucide-react"
 import { PRODUCT_CATEGORIES } from "@/data/categories"
 import { SITE_CONFIG } from "@/data/site-config"
 
@@ -21,13 +21,23 @@ export function Footer() {
             <p className="text-sm text-[#A8A49D] leading-relaxed max-w-sm font-light">
               {SITE_CONFIG.shortDesc} Mobilya üretimi, özel tasarım ve döşeme yenileme hizmetleri.
             </p>
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
               <a
                 href={SITE_CONFIG.phoneTel}
                 className="inline-flex items-center gap-2 text-sm text-white hover:text-[#C79D6D] transition-colors"
               >
                 <Phone size={15} className="text-[#C79D6D]" />
                 <span className="font-medium">{SITE_CONFIG.phone}</span>
+              </a>
+              <a
+                href={SITE_CONFIG.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-xs text-[#A8A49D] hover:text-white transition-colors max-w-xs leading-relaxed"
+                title="Google Haritalar'da Aç"
+              >
+                <MapPin size={14} className="text-[#C79D6D] shrink-0 mt-0.5" />
+                <span>{SITE_CONFIG.address}</span>
               </a>
             </div>
             {/* Sosyal İkonlar */}

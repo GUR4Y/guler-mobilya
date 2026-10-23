@@ -55,7 +55,7 @@ export function UpholsteryCta() {
             <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#A8A49D]">
               <div className="flex items-center gap-2">
                 <Clock size={14} className="text-amber-400" />
-                <span>Pazartesi – Cumartesi 09:00 - 19:30</span>
+                <span>Pazartesi – Pazar (Haftanın 7 Günü)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-amber-400" />

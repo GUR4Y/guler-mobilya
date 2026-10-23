@@ -185,50 +185,48 @@ export default function IletisimPage() {
                 <ContactMessageForm />
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Google Haritalar Konum Bölümü (Hepsini altında, footer'ın hemen üstünde) */}
-        <section className="bg-white border-t border-[#E7E2DA] py-12 lg:py-16">
-          <div className="container-custom space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#9A6836] block mb-1">
-                  Mağaza &amp; Atölye Konumumuz
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-light text-[#1E1E1C] tracking-tight">
-                  Bizi Gaziosmanpaşa'daki Mağazamızda Ziyaret Edin
-                </h2>
-                <p className="text-xs sm:text-sm text-[#6E6A64] mt-1.5 flex items-center gap-1.5">
-                  <MapPin size={14} className="text-[#9A6836] shrink-0" />
-                  <span>{SITE_CONFIG.address}</span>
-                </p>
+            {/* Google Haritalar Konumu (Aynı sayfa tonu altında, formun hemen devamında, kırmızı pin işaretli) */}
+            <div className="mt-12 lg:mt-16 pt-10 border-t border-[#E7E2DA] space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#9A6836] block mb-1">
+                    Mağaza &amp; Atölye Konumumuz
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-light text-[#1E1E1C] tracking-tight">
+                    Bizi Esenler Atışalanı'ndaki Mağazamızda Ziyaret Edin
+                  </h2>
+                  <p className="text-xs sm:text-sm text-[#6E6A64] mt-1.5 flex items-center gap-1.5">
+                    <MapPin size={14} className="text-[#9A6836] shrink-0" />
+                    <span>{SITE_CONFIG.address}</span>
+                  </p>
+                </div>
+
+                <a
+                  href={SITE_CONFIG.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs font-semibold tracking-wide transition-colors shrink-0 shadow-sm"
+                >
+                  <Navigation size={14} />
+                  <span>Google Haritalar'da Yol Tarifi Al</span>
+                </a>
               </div>
 
-              <a
-                href={SITE_CONFIG.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs font-semibold tracking-wide transition-colors shrink-0 shadow-sm"
-              >
-                <Navigation size={14} />
-                <span>Google Haritalar'da Yol Tarifi Al</span>
-              </a>
-            </div>
-
-            {/* Harita Çerçevesi */}
-            <div className="w-full h-[380px] sm:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden border border-[#E7E2DA] shadow-sm relative bg-[#EFECE6]">
-              <iframe
-                title="Güler Mobilya Mağaza ve Atölye Konumu"
-                src="https://maps.google.com/maps?q=G%C3%BCler+Mobilya,+Merkez,+Y%C4%B1ld%C4%B1r%C4%B1m+Beyaz%C4%B1t+Sk.,+34245+Gaziosmanpa%C5%9Fa%2F%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              />
+              {/* Harita Çerçevesi (Kırmızı Konum Pini İle Doğrudan Güler Mobilya Noktası) */}
+              <div className="w-full h-[380px] sm:h-[460px] lg:h-[500px] rounded-2xl overflow-hidden border border-[#E7E2DA] shadow-sm relative bg-[#EFECE6]">
+                <iframe
+                  title="Güler Mobilya Esenler Atışalanı Konumu"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.082046206016!2d28.864619!3d41.056407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb32d12362cd%3A0xc452b019b7c2567c!2zR8O8bGVyIE1vYmlseWE!5e0!3m2!1str!2str!4v1714000000000!5m2!1str!2str"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </section>

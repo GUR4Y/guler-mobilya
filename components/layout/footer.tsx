@@ -46,7 +46,7 @@ export function Footer() {
                 href={SITE_CONFIG.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-[#A8A49D] hover:text-white hover:border-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-full border border-white/15 hover:border-white/50 flex items-center justify-center text-[#A8A49D] hover:text-white hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 active:scale-95"
                 aria-label="Güler Mobilya Instagram"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export function Footer() {
                 href={SITE_CONFIG.social.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-[#A8A49D] hover:text-white hover:border-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-full border border-white/15 hover:border-white/50 flex items-center justify-center text-[#A8A49D] hover:text-white hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 active:scale-95"
                 aria-label="Güler Mobilya TikTok"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export function Footer() {
                 href={SITE_CONFIG.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-[#A8A49D] hover:text-white hover:border-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-full border border-white/15 hover:border-white/50 flex items-center justify-center text-[#A8A49D] hover:text-white hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 active:scale-95"
                 aria-label="Güler Mobilya YouTube"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export function Footer() {
                 href={SITE_CONFIG.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-[#A8A49D] hover:text-white hover:border-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-full border border-white/15 hover:border-white/50 flex items-center justify-center text-[#A8A49D] hover:text-white hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 active:scale-95"
                 aria-label="Facebook"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ export function Footer() {
                 href={SITE_CONFIG.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-[#A8A49D] hover:text-white hover:border-white hover:bg-white/5 transition-colors"
+                className="w-9 h-9 rounded-full border border-white/15 hover:border-white/50 flex items-center justify-center text-[#A8A49D] hover:text-white hover:bg-white/10 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 active:scale-95"
                 aria-label="X / Twitter"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">

@@ -53,7 +53,7 @@ export function ContactMessageForm() {
               key={i}
               type="button"
               onClick={() => handleQuickTopic(topic)}
-              className="text-xs bg-[#F7F5F1] hover:bg-[#EFECE6] text-[#4A4742] hover:text-[#1E1E1C] px-3 py-1.5 rounded-full border border-[#E7E2DA] transition-colors"
+              className="btn-elevate text-xs bg-[#F7F5F1] hover:bg-[#EAE6DF] text-[#4A4742] hover:text-[#1E1E1C] px-3.5 py-1.5 rounded-full border border-[#E7E2DA] hover:border-[#1E1E1C]/30 transition-all shadow-xs active:scale-95 cursor-pointer"
             >
               + {topic}
             </button>
@@ -79,9 +79,9 @@ export function ContactMessageForm() {
         {/* WhatsApp Gönder Butonu */}
         <button
           type="submit"
-          className="w-full py-4 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold tracking-wide transition-all duration-200 flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg active:scale-[0.99] cursor-pointer"
+          className="group btn-elevate btn-shadow-emerald btn-sheen w-full py-4 px-6 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold tracking-wide transition-all flex items-center justify-center gap-2.5 shadow-md active:scale-[0.985] cursor-pointer"
         >
-          <Send size={16} />
+          <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
           <span>Mesajı WhatsApp ile Gönder</span>
         </button>
 

@@ -20,17 +20,17 @@ export function ContactCta() {
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={SITE_CONFIG.phoneTel}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#333330] transition-colors shadow-sm"
+              className="group btn-elevate btn-shadow-dark btn-sheen w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#2E2E2B] transition-all shadow-sm active:scale-[0.985]"
             >
-              <Phone size={16} />
+              <Phone size={16} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Hemen Ara — {SITE_CONFIG.phone}</span>
             </a>
             <Link
               href="/iletisim"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-colors"
+              className="group btn-elevate btn-shadow-outline w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-all shadow-xs active:scale-[0.985]"
             >
               <span>İletişim Sayfası</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </div>

@@ -36,17 +36,17 @@ export function UpholsteryCta() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold tracking-wide shadow-lg transition-all"
+                className="group btn-elevate btn-shadow-emerald btn-sheen w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold tracking-wide shadow-lg transition-all active:scale-[0.985]"
               >
-                <Camera size={18} />
+                <Camera size={18} className="group-hover:scale-110 transition-transform duration-300" />
                 <span>Fotoğraf Gönder (WhatsApp)</span>
               </a>
 
               <a
                 href={SITE_CONFIG.phoneTel}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold tracking-wide border border-white/20 transition-all"
+                className="group btn-elevate btn-shadow-outline w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold tracking-wide border border-white/20 hover:border-white/40 transition-all active:scale-[0.985]"
               >
-                <Phone size={16} />
+                <Phone size={16} className="group-hover:rotate-12 transition-transform duration-300" />
                 <span>{SITE_CONFIG.phone}</span>
               </a>
             </div>

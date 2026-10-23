@@ -19,10 +19,10 @@ export function CategoryShowcase() {
           </div>
           <Link
             href="/urunler"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E1E1C] hover:text-[#9A6836] transition-colors mt-4 md:mt-0"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E1E1C] hover:text-[#9A6836] transition-colors mt-4 md:mt-0"
           >
             <span>Tüm Modelleri Gör</span>
-            <ArrowRight size={15} />
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
 
@@ -54,8 +54,8 @@ export function CategoryShowcase() {
                     {cat.shortDesc}
                   </p>
                 </div>
-                <div className="w-8 h-8 rounded-full border border-[#E7E2DA] group-hover:border-[#1E1E1C] group-hover:bg-[#1E1E1C] group-hover:text-white flex items-center justify-center text-[#1E1E1C] transition-all duration-200 shrink-0 ml-3">
-                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                <div className="w-8 h-8 rounded-full border border-[#E7E2DA] group-hover:border-[#1E1E1C] group-hover:bg-[#1E1E1C] group-hover:text-white flex items-center justify-center text-[#1E1E1C] group-hover:shadow-sm group-hover:scale-105 transition-all duration-300 shrink-0 ml-3">
+                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
                 </div>
               </div>
             </Link>
@@ -79,10 +79,10 @@ export function CategoryShowcase() {
           </div>
           <Link
             href="/katalog"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs sm:text-sm font-medium tracking-wide transition-colors shrink-0 shadow-xs"
+            className="group btn-elevate btn-shadow-dark btn-sheen inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1E1E1C] hover:bg-[#2E2E2B] text-white text-xs sm:text-sm font-medium tracking-wide transition-all shrink-0 shadow-xs active:scale-[0.985]"
           >
             <span>Kataloğu Gör</span>
-            <ArrowRight size={14} />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
       </div>

@@ -153,16 +153,16 @@ export function UpholsterySection() {
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
             <Link
               href="/doseme"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#1E1E1C] text-[#1E1E1C] text-sm font-semibold tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-colors"
+              className="group btn-elevate btn-shadow-outline w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#1E1E1C] text-[#1E1E1C] text-sm font-semibold tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-all shadow-xs active:scale-[0.985]"
             >
               <span>Detaylı Sayfayı İncele</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
             <a
               href={SITE_CONFIG.phoneTel}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#1E1E1C] text-white text-sm font-semibold tracking-wide hover:bg-[#333330] transition-colors shadow-md"
+              className="group btn-elevate btn-shadow-dark btn-sheen w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#1E1E1C] text-white text-sm font-semibold tracking-wide hover:bg-[#2E2E2B] transition-all shadow-md active:scale-[0.985]"
             >
-              <Phone size={16} />
+              <Phone size={16} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Ara: {SITE_CONFIG.phone}</span>
             </a>
           </div>

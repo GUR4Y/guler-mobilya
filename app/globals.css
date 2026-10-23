@@ -83,3 +83,114 @@ nextjs-portal,
 [data-nextjs-indicator] {
   display: none !important;
 }
+
+/* ==========================================================
+   Zarif & Kurumsal Buton Efektleri (Lüks Mobilya Teması)
+   Aşırıya kaçmayan, resmiyeti koruyan rafine mikro etkileşimler
+   ========================================================== */
+
+/* Genel Buton Taban Davranışı */
+button,
+a[role="button"],
+.btn-interaction {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.24s ease,
+              border-color 0.24s ease,
+              color 0.24s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Lüks Mikro Yükselme & Gölge Efekti */
+.btn-elevate {
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease !important;
+}
+
+.btn-elevate:hover {
+  transform: translateY(-2px);
+}
+
+.btn-elevate:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Koyu Renkli Butonlar İçin Rafine Gölge */
+.btn-shadow-dark:hover {
+  box-shadow: 0 8px 22px -5px rgba(30, 30, 28, 0.22),
+              0 3px 8px -2px rgba(30, 30, 28, 0.12);
+}
+
+/* Açık / Beyaz Renkli Butonlar İçin Temiz Gölge */
+.btn-shadow-light:hover {
+  box-shadow: 0 10px 24px -5px rgba(0, 0, 0, 0.14),
+              0 3px 8px -2px rgba(0, 0, 0, 0.08);
+}
+
+/* WhatsApp / Yeşil Butonlar İçin Lüks Yumuşak Işıltı */
+.btn-shadow-emerald:hover {
+  box-shadow: 0 8px 22px -4px rgba(4, 120, 87, 0.32),
+              0 3px 8px -2px rgba(4, 120, 87, 0.18);
+}
+
+/* Şeffaf / Borderlı Butonlar İçin İnce Odak */
+.btn-shadow-outline:hover {
+  box-shadow: 0 6px 18px -4px rgba(30, 30, 28, 0.08);
+}
+
+/* Zarif Lüks Işıltı (Subtle Sheen): Çok hafif, şeffaf ve abartısız bir ışık geçişi */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.16) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.btn-sheen:hover::after {
+  left: 150%;
+}
+
+/* Beyaz / Açık Arka Planlı Butonlar İçin İnce Koyu Işıltı */
+.btn-sheen-dark::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(30, 30, 28, 0.07) 50%,
+    transparent 100%
+  );
+}
+
+/* Buton İçi İkonların Zarif Süzülmesi */
+.btn-icon-drift svg,
+.btn-icon-drift [data-icon] {
+  transition: transform 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-icon-drift:hover svg.icon-arrow-right,
+.btn-icon-drift:hover svg:not(.no-drift) {
+  transform: translateX(3px);
+}
+
+.btn-icon-drift:hover svg.icon-download {
+  transform: translateY(2.5px);
+}
+

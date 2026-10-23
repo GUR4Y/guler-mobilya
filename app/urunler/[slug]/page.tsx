@@ -90,7 +90,7 @@ export default async function DynamicSlugPage({ params }: DynamicSlugPageProps) 
               <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 py-0.5">
                 <Link
                   href="/urunler"
-                  className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap bg-[#F7F5F1] text-[#6E6A64] hover:text-[#1E1E1C] transition-colors"
+                  className="btn-elevate px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap bg-[#F7F5F1] text-[#6E6A64] hover:text-[#1E1E1C] hover:bg-[#EAE6DF] transition-all shadow-2xs hover:shadow-xs active:scale-95"
                 >
                   Tüm Ürünler
                 </Link>
@@ -101,10 +101,10 @@ export default async function DynamicSlugPage({ params }: DynamicSlugPageProps) 
                     <Link
                       key={cat.slug}
                       href={`/urunler/${cat.slug}`}
-                      className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-colors ${
+                      className={`btn-elevate px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all active:scale-95 ${
                         isActive
                           ? "bg-[#1E1E1C] text-white shadow-xs"
-                          : "bg-[#F7F5F1] text-[#6E6A64] hover:text-[#1E1E1C] hover:bg-[#EFECE6]"
+                          : "bg-[#F7F5F1] text-[#6E6A64] hover:text-[#1E1E1C] hover:bg-[#EAE6DF] hover:shadow-xs"
                       }`}
                     >
                       {cat.title}
@@ -272,16 +272,16 @@ export default async function DynamicSlugPage({ params }: DynamicSlugPageProps) 
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
                         href={SITE_CONFIG.phoneTel}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#333330] transition-colors flex-1"
+                        className="group btn-elevate btn-shadow-dark btn-sheen inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#2E2E2B] transition-all shadow-sm active:scale-[0.985] flex-1"
                       >
-                        <Phone size={15} />
+                        <Phone size={15} className="group-hover:rotate-12 transition-transform duration-300" />
                         <span>Bilgi Al ({SITE_CONFIG.phone})</span>
                       </a>
                       <Link
                         href="/iletisim"
-                        className="inline-flex items-center justify-center px-6 py-3.5 rounded-md border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-colors"
+                        className="group btn-elevate btn-shadow-outline inline-flex items-center justify-center px-6 py-3.5 rounded-md border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-all shadow-xs active:scale-[0.985]"
                       >
-                        İletişim
+                        <span>İletişim</span>
                       </Link>
                     </div>
                   </div>

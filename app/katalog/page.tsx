@@ -81,17 +81,17 @@ export default function KatalogPage() {
                       href={SITE_CONFIG.catalogUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#333330] transition-colors shadow-sm"
+                      className="group btn-elevate btn-shadow-dark btn-sheen inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#2E2E2B] transition-all shadow-sm active:scale-[0.985]"
                     >
-                      <BookOpen size={16} />
+                      <BookOpen size={16} className="group-hover:scale-110 transition-transform duration-300" />
                       <span>Kataloğu Görüntüle (PDF)</span>
                     </a>
                     <a
                       href={SITE_CONFIG.catalogUrl}
                       download="Guler-Mobilya-2026-Katalog.pdf"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-colors"
+                      className="group btn-elevate btn-shadow-outline inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-[#1E1E1C] text-[#1E1E1C] text-sm font-medium tracking-wide hover:bg-[#1E1E1C] hover:text-white transition-all shadow-xs active:scale-[0.985]"
                     >
-                      <Download size={16} />
+                      <Download size={16} className="group-hover:translate-y-0.5 transition-transform duration-300" />
                       <span>PDF İndir</span>
                     </a>
                   </div>

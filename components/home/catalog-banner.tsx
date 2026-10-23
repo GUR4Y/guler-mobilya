@@ -25,9 +25,9 @@ export function CatalogBanner() {
               <div>
                 <Link
                   href="/katalog"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-[#1E1E1C] hover:bg-[#333330] text-white text-sm font-medium tracking-wide transition-colors shadow-xs"
+                  className="group btn-elevate btn-shadow-dark btn-sheen inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-[#1E1E1C] hover:bg-[#2E2E2B] text-white text-sm font-medium tracking-wide transition-all shadow-sm active:scale-[0.985]"
                 >
-                  <BookOpen size={16} />
+                  <BookOpen size={16} className="group-hover:scale-110 transition-transform duration-300" />
                   <span>Kataloğu İncele</span>
                 </Link>
               </div>

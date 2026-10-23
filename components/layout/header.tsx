@@ -240,9 +240,9 @@ export function Header() {
             <div className="pt-4 border-t border-[#E7E2DA]">
               <a
                 href={SITE_CONFIG.phoneTel}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide"
+                className="group btn-elevate btn-shadow-dark btn-sheen w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-md bg-[#1E1E1C] text-white text-sm font-medium tracking-wide hover:bg-[#2E2E2B] transition-all shadow-sm active:scale-[0.985]"
               >
-                <Phone size={15} />
+                <Phone size={15} className="group-hover:rotate-12 transition-transform duration-300" />
                 <span>{SITE_CONFIG.phone} — Hemen Ara</span>
               </a>
             </div>

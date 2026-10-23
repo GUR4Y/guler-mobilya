@@ -26,10 +26,10 @@ export function CatalogCalloutBanner({ categoryTitle }: CatalogCalloutBannerProp
 
       <Link
         href="/katalog"
-        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs sm:text-sm font-medium tracking-wide transition-colors shrink-0 shadow-xs w-full sm:w-auto"
+        className="group btn-elevate btn-shadow-dark btn-sheen inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#1E1E1C] hover:bg-[#2E2E2B] text-white text-xs sm:text-sm font-medium tracking-wide transition-all shrink-0 shadow-xs active:scale-[0.985] w-full sm:w-auto"
       >
         <span>Kataloğu Gör</span>
-        <ArrowRight size={15} />
+        <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
       </Link>
     </div>
   )

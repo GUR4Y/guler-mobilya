@@ -54,19 +54,19 @@ export function UpholsteryHero() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold tracking-wide shadow-md transition-all duration-200 hover:shadow-lg"
+                className="group btn-elevate btn-shadow-emerald btn-sheen inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold tracking-wide shadow-md transition-all active:scale-[0.985]"
               >
-                <MessageSquare size={17} />
+                <MessageSquare size={17} className="group-hover:scale-110 transition-transform duration-300" />
                 <span>WhatsApp ile Fotoğraf Gönder, Fiyat Al</span>
               </a>
 
               <button
                 type="button"
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-[#1E1E1C] text-[#1E1E1C] hover:bg-[#1E1E1C] hover:text-white text-sm font-medium tracking-wide transition-all duration-200"
+                className="group btn-elevate btn-shadow-outline inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-[#1E1E1C] text-[#1E1E1C] hover:bg-[#1E1E1C] hover:text-white text-sm font-medium tracking-wide transition-all shadow-xs active:scale-[0.985] cursor-pointer"
               >
                 <span>Dönüşüm Projelerini İncele</span>
-                <ChevronRight size={16} />
+                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
 
@@ -133,9 +133,9 @@ export function UpholsteryHero() {
               <div className="pt-2">
                 <a
                   href={SITE_CONFIG.phoneTel}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1E1E1C] text-white text-xs font-semibold hover:bg-[#333330] transition-colors"
+                  className="group btn-elevate btn-shadow-dark btn-sheen w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#1E1E1C] text-white text-xs font-semibold hover:bg-[#2E2E2B] transition-all shadow-sm active:scale-[0.985]"
                 >
-                  <Phone size={14} />
+                  <Phone size={14} className="group-hover:rotate-12 transition-transform duration-300" />
                   <span>Doğrudan Atölyeyi Ara: {SITE_CONFIG.phone}</span>
                 </a>
               </div>

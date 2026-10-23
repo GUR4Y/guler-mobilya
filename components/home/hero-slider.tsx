@@ -112,17 +112,17 @@ export function HeroSlider() {
           <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4">
             <Link
               href={SLIDES[current].primaryBtn.href}
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white text-neutral-900 text-sm font-semibold tracking-wide hover:bg-neutral-100 transition-colors shadow-lg active:scale-95"
+              className="group btn-elevate btn-shadow-light btn-sheen btn-sheen-dark inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white text-neutral-900 text-sm font-semibold tracking-wide hover:bg-[#FAF9F6] shadow-md transition-all active:scale-[0.985]"
             >
               <span>{SLIDES[current].primaryBtn.text}</span>
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
 
             <Link
               href={SLIDES[current].secondaryBtn.href}
-              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 text-sm font-medium tracking-wide transition-colors backdrop-blur-xs active:scale-95"
+              className="group btn-elevate btn-shadow-outline inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 hover:border-white/60 text-sm font-medium tracking-wide backdrop-blur-xs shadow-sm transition-all active:scale-[0.985]"
             >
-              <BookOpen size={16} />
+              <BookOpen size={16} className="group-hover:scale-110 transition-transform duration-300" />
               <span>{SLIDES[current].secondaryBtn.text}</span>
             </Link>
           </div>
@@ -130,22 +130,22 @@ export function HeroSlider() {
       </div>
 
       {/* Slider Ok Butonları */}
-      <div className="absolute bottom-5 right-4 sm:bottom-8 sm:right-12 z-20 flex items-center gap-2">
+      <div className="absolute bottom-5 right-4 sm:bottom-8 sm:right-12 z-20 flex items-center gap-2.5">
         <button
           type="button"
           onClick={prevSlide}
-          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors backdrop-blur-xs active:scale-95"
+          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 hover:border-white/50 flex items-center justify-center transition-all duration-300 backdrop-blur-xs shadow-md hover:shadow-xl hover:scale-105 active:scale-95"
           aria-label="Önceki Slayt"
         >
-          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:-translate-x-0.5" />
         </button>
         <button
           type="button"
           onClick={nextSlide}
-          className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors backdrop-blur-xs active:scale-95"
+          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-black/85 text-white border border-white/25 hover:border-white/50 flex items-center justify-center transition-all duration-300 backdrop-blur-xs shadow-md hover:shadow-xl hover:scale-105 active:scale-95"
           aria-label="Sonraki Slayt"
         >
-          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:translate-x-0.5" />
         </button>
       </div>
 

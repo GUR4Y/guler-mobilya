@@ -304,15 +304,15 @@ export function UpholsteryGallery() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full bg-[#1E1E1C] hover:bg-[#333330] text-white text-xs font-semibold transition-colors inline-flex items-center gap-1.5"
+                  className="group btn-elevate btn-shadow-dark btn-sheen px-4 py-2 rounded-full bg-[#1E1E1C] hover:bg-[#2E2E2B] text-white text-xs font-semibold transition-all inline-flex items-center gap-1.5 active:scale-95 shadow-xs"
                 >
-                  <MessageSquare size={13} />
+                  <MessageSquare size={13} className="group-hover:scale-110 transition-transform duration-300" />
                   <span>Fiyat Sor</span>
                 </a>
                 <button
                   type="button"
                   onClick={() => setSelectedReviewProject(null)}
-                  className="px-4 py-2 rounded-full bg-[#F7F5F1] hover:bg-[#EFECE6] text-[#1E1E1C] text-xs font-semibold transition-colors cursor-pointer border border-[#E7E2DA]"
+                  className="btn-elevate px-4 py-2 rounded-full bg-[#F7F5F1] hover:bg-[#EAE6DF] text-[#1E1E1C] text-xs font-semibold transition-all cursor-pointer border border-[#E7E2DA] hover:border-[#1E1E1C]/30 active:scale-95 shadow-xs"
                 >
                   Kapat
                 </button>

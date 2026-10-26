@@ -60,9 +60,8 @@ export function HeroSlider() {
       {SLIDES.map((slide, idx) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-            idx === current ? "opacity-100 z-0" : "opacity-0 -z-10 pointer-events-none"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${idx === current ? "opacity-100 z-0" : "opacity-0 -z-10 pointer-events-none"
+            }`}
         >
           {/* Mobil İçin Optimize Edilmiş Dikey Görsel (3:4 Dikey Oran) */}
           <div className="relative w-full h-full block sm:hidden">
@@ -148,6 +147,60 @@ export function HeroSlider() {
         >
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:translate-x-0.5" />
         </button>
+        Subtle Button Hover Effects
+        12:20 AM
+        Patronun isteği doğrultusunda, üst menü / navbar (Ana Sayfa, Ürünler) alanına dokunmadan, doğrudan sayfanın ana bölümü olan
+
+        Hero Slider
+        div'inin sağ üst köşesine şık ve lüks bir WhatsApp İletişim Baloncuğu eklendi.
+
+        Eklenen Özellikler:
+        Konumlandırma:
+
+        Menü çubuğunun dışında, doğrudan sayfa div'inin sağ üst köşesinde yer alır (absolute top-4 right-4 sm:top-7 sm:right-8 lg:right-12).
+        Hem mobilde hem de masaüstünde slider görseli ve metinleriyle çakışmadan ferahça durur.
+        Görsel Tasarım & Mikro Efektler:
+
+        Canlı Çevrimiçi Göstergesi: Müşteri temsilcisinin aktif olduğunu hissettiren yeşil yanıp sönen nabız (pulse) ışığı.
+        Orijinal WhatsApp Vektör Logosu: Net ve tanınabilir WhatsApp ikonu.
+        Metin Alanı: Masaüstünde "Canlı Destek & Fiyat — WhatsApp İletişim" hiyerarşisi, mobilde kompakt şık görünüm.
+        Lüks Cam & Işık Efekti: backdrop-blur-md, zümrüt yeşili degrade arka plan, üzerine gelindiğinde az önce hazırladığımız mikro yükselme (-2px) ve zarif ışık yansıması (sheen) animasyonu.
+        Doğrudan Bağlantı:
+
+        Tıklandığında otomatik olarak Güler Mobilya resmi WhatsApp hattına (0544 407 92 39) hazır selamlaşma ve fiyat sorma mesajıyla bağlanır.
+        12:20 AM
+        sabıt kalmasın kaydırdıkca benle beraber o da ınsın bıde her sayfada olsa kotu mu olur ya bı deneyelım her sayfada olsun
+        12:26 AM
+        İstediğiniz gibi güncelledim! Artık WhatsApp iletişim baloncuğu sadece bir bölümde takılı kalmıyor; siz sayfayı aşağı kaydırdıkça ekranın sağ üstünde sizinle birlikte akıcı şekilde süzülüyor ve sitedeki tüm sayfalarda aktif olarak çalışıyor.
+
+        Yapılan Düzenlemeler:
+        Sayfayla Birlikte İnen (Floating / Sticky) Düzen:
+
+
+
+        FloatingWhatsApp
+        bileşeni fixed konumlandırma ile hazırlandı (top-[116px] sm:top-[124px] right-3 sm:right-6 lg:right-8).
+        Üst menü / navbar ile çakışmaz, menünün hemen altında sayfa alanının sağ üst köşesinde her zaman görünür ve erişilebilir kalır.
+        Tüm Sayfalarda Geçerli (Global Layout Entegrasyonu):
+
+
+
+        RootLayout
+        seviyesine eklendi.
+        Artık Ana Sayfa, Modellerimiz, Ürün Detayları, Döşeme & Yenileme, Katalog ve İletişim dahil tüm sayfalarda kesintisiz olarak çalışır.
+        Lüks & Kurumsal Detaylar:
+
+        Canlı Müşteri Hattı Göstergesi: Yeşil nabız (pulse) efektiyle online/aktif hissi verir.
+        Mikro Etkileşim: Üzerine gelindiğinde hafifçe 2px yükselir (btn-elevate), doğal yeşil gölgesi derinleşir ve içinden hafif bir ışık huzmesi (btn-sheen) geçer.
+        Doğrudan WhatsApp İletişimi: Tıklandığında doğrudan şirket hattına (0544 407 92 39) bağlanır.
+        Production derleme ve kod testleri sıfır hatayla başarıyla tamamlandı.
+
+        Floating WhatsApp iletişim baloncuğunuz tüm sayfalarda sayfa kaydırmasıyla birlikte akıcı şekilde çalışır durumda hazır! İstediğiniz başka bir detay veya ince ayar olursa memnuniyetle yardımcı olurum.
+
+        12:26 AM
+        favıcon olarak bunu ayarla
+        12:35 AM
+        layout.tsx
       </div>
 
       {/* Slider Alt Çizgi İndikatörleri */}
@@ -157,9 +210,8 @@ export function HeroSlider() {
             key={slide.id}
             type="button"
             onClick={() => setCurrent(idx)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === current ? "w-7 sm:w-8 bg-amber-400" : "w-2 bg-white/40 hover:bg-white/70"
-            }`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${idx === current ? "w-7 sm:w-8 bg-amber-400" : "w-2 bg-white/40 hover:bg-white/70"
+              }`}
             aria-label={`Slayt ${idx + 1}`}
           />
         ))}
